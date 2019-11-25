@@ -1,0 +1,1493 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.34 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.34 secs
+ 
+--> Reading design: top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top"
+Output Format                      : NGC
+Target Device                      : xc6slx9-2-ftg256
+
+---- Source Options
+Top Module Name                    : top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\12963\Desktop\FPGA\FPGA_DS\ipcore_dir\sys_pll.v" into library work
+Parsing module <sys_pll>.
+Analyzing Verilog file "C:\Users\12963\Desktop\FPGA\FPGA_DS\ipcore_dir\video_pll.v" into library work
+Parsing module <video_pll>.
+Analyzing Verilog file "C:\Users\12963\Desktop\FPGA\FPGA_DS\ipcore_dir\afifo_16_512.v" into library work
+Parsing module <afifo_16_512>.
+Analyzing Verilog file "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\frame_fifo_write.v" into library work
+Parsing module <frame_fifo_write>.
+Analyzing Verilog file "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\frame_fifo_read.v" into library work
+Parsing module <frame_fifo_read>.
+Analyzing Verilog file "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\color_bar.v" into library work
+Parsing verilog file "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\/video_define.v" included at line 21.
+Parsing module <color_bar>.
+Analyzing Verilog file "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\video_timing_data.v" into library work
+Parsing module <video_timing_data>.
+Analyzing Verilog file "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\sdram\sdram_core_v2.v" into library work
+Parsing module <sdram_core>.
+Analyzing Verilog file "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\rgb_to_W.v" into library work
+Parsing module <rgb_to_M>.
+Analyzing Verilog file "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\max.v" into library work
+Parsing module <max>.
+Analyzing Verilog file "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\frame_read_write.v" into library work
+Parsing module <frame_read_write>.
+Analyzing Verilog file "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\cmos_write_req_gen.v" into library work
+Parsing module <cmos_write_req_gen>.
+Analyzing Verilog file "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\CMOS_Capture_RAW_Gray.v" into library work
+Parsing module <CMOS_Capture_RAW_Gray>.
+Analyzing Verilog file "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\top.v" into library work
+Parsing module <top>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <top>.
+WARNING:HDLCompiler:1127 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\top.v" Line 112: Assignment to cmos_rst_n ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\top.v" Line 113: Assignment to cmos_pwdn ignored, since the identifier is never used
+
+Elaborating module <IBUFG>.
+
+Elaborating module <sys_pll>.
+
+Elaborating module <PLL_BASE(BANDWIDTH="OPTIMIZED",CLK_FEEDBACK="CLKFBOUT",COMPENSATION="SYSTEM_SYNCHRONOUS",DIVCLK_DIVIDE=1,CLKFBOUT_MULT=12,CLKFBOUT_PHASE=0.0,CLKOUT0_DIVIDE=25,CLKOUT0_PHASE=0.0,CLKOUT0_DUTY_CYCLE=0.5,CLKOUT1_DIVIDE=6,CLKOUT1_PHASE=0.0,CLKOUT1_DUTY_CYCLE=0.5,CLKOUT2_DIVIDE=6,CLKOUT2_PHASE=90.0,CLKOUT2_DUTY_CYCLE=0.5,CLKIN_PERIOD=20.0,REF_JITTER=0.01)>.
+WARNING:HDLCompiler:1127 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\ipcore_dir\sys_pll.v" Line 124: Assignment to clkout3_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\ipcore_dir\sys_pll.v" Line 125: Assignment to clkout4_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\ipcore_dir\sys_pll.v" Line 126: Assignment to clkout5_unused ignored, since the identifier is never used
+
+Elaborating module <BUFG>.
+
+Elaborating module <video_pll>.
+
+Elaborating module <DCM_SP(CLKDV_DIVIDE=2.0,CLKFX_DIVIDE=10,CLKFX_MULTIPLY=13,CLKIN_DIVIDE_BY_2="FALSE",CLKIN_PERIOD=20.0,CLKOUT_PHASE_SHIFT="NONE",CLK_FEEDBACK="1X",DESKEW_ADJUST="SYSTEM_SYNCHRONOUS",PHASE_SHIFT=0,STARTUP_WAIT="FALSE")>.
+WARNING:HDLCompiler:1127 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\ipcore_dir\video_pll.v" Line 128: Assignment to status_int ignored, since the identifier is never used
+
+Elaborating module <cmos_write_req_gen>.
+
+Elaborating module <CMOS_Capture_RAW_Gray(CMOS_FRAME_WAITCNT=4'b1010)>.
+WARNING:HDLCompiler:1127 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\top.v" Line 182: Assignment to cmos_frame_vsync ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\top.v" Line 186: Assignment to cmos_frame_clken ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\top.v" Line 189: Assignment to cmos_fps_rate ignored, since the identifier is never used
+
+Elaborating module <video_timing_data>.
+WARNING:HDLCompiler:1127 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\video_timing_data.v" Line 61: Assignment to video_de1_d1 ignored, since the identifier is never used
+
+Elaborating module <color_bar>.
+WARNING:HDLCompiler:1127 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\top.v" Line 204: Assignment to de ignored, since the identifier is never used
+
+Elaborating module <max>.
+WARNING:HDLCompiler:1127 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\top.v" Line 216: Assignment to max_data ignored, since the identifier is never used
+
+Elaborating module <rgb_to_M>.
+WARNING:HDLCompiler:413 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\rgb_to_W.v" Line 48: Result of 32-bit expression is truncated to fit in 5-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\rgb_to_W.v" Line 49: Result of 8-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\rgb_to_W.v" Line 54: Result of 32-bit expression is truncated to fit in 5-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\rgb_to_W.v" Line 55: Result of 32-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\rgb_to_W.v" Line 59: Result of 32-bit expression is truncated to fit in 5-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\rgb_to_W.v" Line 60: Result of 8-bit expression is truncated to fit in 5-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\rgb_to_W.v" Line 65: Result of 8-bit expression is truncated to fit in 5-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\rgb_to_W.v" Line 66: Result of 32-bit expression is truncated to fit in 5-bit target.
+
+Elaborating module <frame_read_write>.
+
+Elaborating module <afifo_16_512>.
+WARNING:HDLCompiler:1499 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\ipcore_dir\afifo_16_512.v" Line 39: Empty module <afifo_16_512> remains a black box.
+WARNING:HDLCompiler:189 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\frame_read_write.v" Line 91: Size mismatch in connection of port <rd_data_count>. Formal port size is 9-bit while actual signal size is 16-bit.
+
+Elaborating module <frame_fifo_write(MEM_DATA_BITS=16,ADDR_BITS=24,BUSRT_BITS=10,BURST_SIZE=256)>.
+WARNING:HDLCompiler:189 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\frame_read_write.v" Line 138: Size mismatch in connection of port <wr_data_count>. Formal port size is 9-bit while actual signal size is 16-bit.
+
+Elaborating module <frame_fifo_read(MEM_DATA_BITS=16,ADDR_BITS=24,BUSRT_BITS=10,FIFO_DEPTH=512,BURST_SIZE=256)>.
+
+Elaborating module <sdram_core>.
+WARNING:Xst:2972 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\top.v" line 210. All outputs of instance <data_max> of block <max> are unconnected in block <top>. Underlying logic will be removed.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <top>.
+    Related source file is "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\top.v".
+        MEM_DATA_BITS = 16
+        ADDR_BITS = 24
+        BUSRT_BITS = 10
+INFO:Xst:3210 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\top.v" line 125: Output port <locked> of the instance <sys_pll_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\top.v" line 137: Output port <locked> of the instance <video_pll_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\top.v" line 168: Output port <cmos_fps_rate> of the instance <u_CMOS_Capture_RAW_Gray> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\top.v" line 168: Output port <cmos_frame_vsync> of the instance <u_CMOS_Capture_RAW_Gray> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\top.v" line 168: Output port <cmos_frame_clken> of the instance <u_CMOS_Capture_RAW_Gray> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\top.v" line 193: Output port <de> of the instance <video_timing_data_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\top.v" line 210: Output port <max_data> of the instance <data_max> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\top.v" line 232: Output port <read_finish> of the instance <frame_read_write_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\top.v" line 232: Output port <write_finish> of the instance <frame_read_write_m0> is unconnected or connected to loadless signal.
+    Found 1-bit tristate buffer for signal <cmos_ctl0> created at line 56
+    Summary:
+	inferred   1 Tristate(s).
+Unit <top> synthesized.
+
+Synthesizing Unit <sys_pll>.
+    Related source file is "C:\Users\12963\Desktop\FPGA\FPGA_DS\ipcore_dir\sys_pll.v".
+    Summary:
+	no macro.
+Unit <sys_pll> synthesized.
+
+Synthesizing Unit <video_pll>.
+    Related source file is "C:\Users\12963\Desktop\FPGA\FPGA_DS\ipcore_dir\video_pll.v".
+    Summary:
+	no macro.
+Unit <video_pll> synthesized.
+
+Synthesizing Unit <cmos_write_req_gen>.
+    Related source file is "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\cmos_write_req_gen.v".
+    Found 2-bit register for signal <write_addr_index>.
+    Found 2-bit register for signal <read_addr_index>.
+    Found 1-bit register for signal <cmos_vsync_d1>.
+    Found 1-bit register for signal <cmos_vsync_d2>.
+    Found 1-bit register for signal <cmos_vsync_d3>.
+    Found 1-bit register for signal <write_req>.
+    Found 1-bit register for signal <cmos_vsync_d0>.
+    Found 2-bit adder for signal <write_addr_index[1]_GND_9_o_add_8_OUT> created at line 66.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   9 D-type flip-flop(s).
+Unit <cmos_write_req_gen> synthesized.
+
+Synthesizing Unit <CMOS_Capture_RAW_Gray>.
+    Related source file is "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\CMOS_Capture_RAW_Gray.v".
+        CMOS_FRAME_WAITCNT = 4'b1010
+    Found 2-bit register for signal <cmos_href_r>.
+    Found 2-bit register for signal <cmos_vsync_r>.
+    Found 8-bit register for signal <cmos_data_r0>.
+    Found 8-bit register for signal <cmos_data_r1>.
+    Found 8-bit register for signal <cmos_fps_rate>.
+    Found 4-bit register for signal <cmos_fps_cnt>.
+    Found 28-bit register for signal <delay_cnt>.
+    Found 9-bit register for signal <cmos_fps_cnt2>.
+    Found 1-bit register for signal <frame_sync_flag>.
+    Found 4-bit adder for signal <cmos_fps_cnt[3]_GND_10_o_add_5_OUT> created at line 90.
+    Found 28-bit adder for signal <delay_cnt[27]_GND_10_o_add_13_OUT> created at line 125.
+    Found 9-bit adder for signal <cmos_fps_cnt2[8]_GND_10_o_add_18_OUT> created at line 143.
+    Found 4-bit comparator greater for signal <cmos_fps_cnt[3]_PWR_9_o_LessThan_5_o> created at line 89
+    Found 28-bit comparator greater for signal <delay_cnt[27]_GND_10_o_LessThan_13_o> created at line 124
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred  70 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   6 Multiplexer(s).
+Unit <CMOS_Capture_RAW_Gray> synthesized.
+
+Synthesizing Unit <video_timing_data>.
+    Related source file is "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\video_timing_data.v".
+        DATA_WIDTH = 16
+INFO:Xst:3210 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\video_timing_data.v" line 112: Output port <rgb_r> of the instance <color_bar_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\video_timing_data.v" line 112: Output port <rgb_g> of the instance <color_bar_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\video_timing_data.v" line 112: Output port <rgb_b> of the instance <color_bar_m0> is unconnected or connected to loadless signal.
+    Found 16-bit register for signal <vout_data_r>.
+    Found 1-bit register for signal <video_vs_d0>.
+    Found 1-bit register for signal <video_de_d0>.
+    Found 1-bit register for signal <video_de1_d0>.
+    Found 1-bit register for signal <read_req>.
+    Found 1-bit register for signal <video_hs_d0>.
+    Found 1-bit register for signal <video_hs_d1>.
+    Found 1-bit register for signal <video_vs_d1>.
+    Found 1-bit register for signal <video_de_d1>.
+    Summary:
+	inferred  24 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <video_timing_data> synthesized.
+
+Synthesizing Unit <color_bar>.
+    Related source file is "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\color_bar.v".
+        H_ACTIVE = 16'b0000010000000000
+        H_FP = 16'b0000000000011000
+        H_SYNC = 16'b0000000010001000
+        H_BP = 16'b0000000010100000
+        V_ACTIVE = 16'b0000001100000000
+        V_FP = 16'b0000000000000011
+        V_SYNC = 16'b0000000000000110
+        V_BP = 16'b0000000000011101
+        HS_POL = 1'b0
+        VS_POL = 1'b0
+        H_TOTAL = 16'b0000010101000000
+        V_TOTAL = 16'b0000001100100110
+        WHITE_R = 8'b11111111
+        WHITE_G = 8'b11111111
+        WHITE_B = 8'b11111111
+        YELLOW_R = 8'b11111111
+        YELLOW_G = 8'b11111111
+        YELLOW_B = 8'b00000000
+        CYAN_R = 8'b00000000
+        CYAN_G = 8'b11111111
+        CYAN_B = 8'b11111111
+        GREEN_R = 8'b00000000
+        GREEN_G = 8'b11111111
+        GREEN_B = 8'b00000000
+        MAGENTA_R = 8'b11111111
+        MAGENTA_G = 8'b00000000
+        MAGENTA_B = 8'b11111111
+        RED_R = 8'b11111111
+        RED_G = 8'b00000000
+        RED_B = 8'b00000000
+        BLUE_R = 8'b00000000
+        BLUE_G = 8'b00000000
+        BLUE_B = 8'b11111111
+        BLACK_R = 8'b00000000
+        BLACK_G = 8'b00000000
+        BLACK_B = 8'b00000000
+    Found 12-bit register for signal <h_cnt>.
+    Found 12-bit register for signal <active_x>.
+    Found 12-bit register for signal <v_cnt>.
+    Found 8-bit register for signal <rgb_r_reg>.
+    Found 8-bit register for signal <rgb_g_reg>.
+    Found 8-bit register for signal <rgb_b_reg>.
+    Found 1-bit register for signal <vs_reg_d0>.
+    Found 1-bit register for signal <video_active_d0>.
+    Found 1-bit register for signal <video0_active_d0>.
+    Found 1-bit register for signal <hs_reg>.
+    Found 1-bit register for signal <h_active>.
+    Found 1-bit register for signal <h0_active>.
+    Found 1-bit register for signal <vs_reg>.
+    Found 1-bit register for signal <v_active>.
+    Found 1-bit register for signal <v0_active>.
+    Found 1-bit register for signal <hs_reg_d0>.
+    Found 12-bit subtractor for signal <h_cnt[11]_GND_12_o_sub_12_OUT> created at line 146.
+    Found 12-bit adder for signal <h_cnt[11]_GND_12_o_add_6_OUT> created at line 138.
+    Found 12-bit adder for signal <v_cnt[11]_GND_12_o_add_17_OUT> created at line 159.
+    Found 12-bit comparator greater for signal <n0018> created at line 145
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred  70 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred  25 Multiplexer(s).
+Unit <color_bar> synthesized.
+
+Synthesizing Unit <rgb_to_M>.
+    Related source file is "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\rgb_to_W.v".
+    Found 5-bit register for signal <data_b>.
+    Found 5-bit register for signal <data_r>.
+    Found 6-bit register for signal <data_g>.
+    Found 5-bit subtractor for signal <GND_14_o_GND_14_o_sub_12_OUT<4:0>> created at line 66.
+    Found 5-bit subtractor for signal <GND_14_o_GND_14_o_sub_10_OUT<4:0>> created at line 59.
+    Found 6-bit subtractor for signal <GND_14_o_GND_14_o_sub_7_OUT<5:0>> created at line 55.
+    Found 8-bit comparator greater for signal <cmos_frame_Gray[7]_GND_14_o_LessThan_2_o> created at line 45
+    Found 8-bit comparator greater for signal <cmos_frame_Gray[7]_PWR_14_o_LessThan_5_o> created at line 51
+    Found 8-bit comparator greater for signal <cmos_frame_Gray[7]_PWR_14_o_LessThan_9_o> created at line 57
+    Found 8-bit comparator greater for signal <n0014> created at line 63
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred  16 D-type flip-flop(s).
+	inferred   4 Comparator(s).
+	inferred   8 Multiplexer(s).
+Unit <rgb_to_M> synthesized.
+
+Synthesizing Unit <frame_read_write>.
+    Related source file is "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\frame_read_write.v".
+        MEM_DATA_BITS = 16
+        READ_DATA_BITS = 16
+        WRITE_DATA_BITS = 16
+        ADDR_BITS = 24
+        BUSRT_BITS = 10
+        BURST_SIZE = 256
+INFO:Xst:3210 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\frame_read_write.v" line 81: Output port <wr_data_count> of the instance <write_buf> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\frame_read_write.v" line 81: Output port <full> of the instance <write_buf> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\frame_read_write.v" line 81: Output port <empty> of the instance <write_buf> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\frame_read_write.v" line 127: Output port <rd_data_count> of the instance <read_buf> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\frame_read_write.v" line 127: Output port <full> of the instance <read_buf> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\frame_read_write.v" line 127: Output port <empty> of the instance <read_buf> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <frame_read_write> synthesized.
+
+Synthesizing Unit <frame_fifo_write>.
+    Related source file is "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\frame_fifo_write.v".
+        MEM_DATA_BITS = 16
+        ADDR_BITS = 24
+        BUSRT_BITS = 10
+        BURST_SIZE = 256
+    Register <write_len_d0_dummy> equivalent to <write_len_d0> has been removed
+    Found 20-bit register for signal <write_len_d1>.
+    Found 24-bit register for signal <write_len_latch>.
+    Found 24-bit register for signal <wr_burst_addr>.
+    Found 24-bit register for signal <write_cnt>.
+    Found 2-bit register for signal <write_addr_index_d0>.
+    Found 2-bit register for signal <write_addr_index_d1>.
+    Found 4-bit register for signal <state>.
+    Found 10-bit register for signal <wr_burst_len>.
+    Found 1-bit register for signal <write_req_d1>.
+    Found 1-bit register for signal <write_req_d2>.
+    Found 1-bit register for signal <wr_burst_req>.
+    Found 1-bit register for signal <fifo_aclr>.
+    Found 1-bit register for signal <write_req_ack>.
+    Found 1-bit register for signal <write_req_d0>.
+    Found 1-bit register for signal <write_len_d0>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 6                                              |
+    | Transitions        | 13                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 9                                              |
+    | Clock              | mem_clk (rising_edge)                          |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 24-bit adder for signal <write_cnt[23]_GND_24_o_add_29_OUT> created at line 178.
+    Found 24-bit adder for signal <wr_burst_addr[23]_GND_24_o_add_30_OUT> created at line 180.
+    Found 4x24-bit Read Only RAM for signal <wr_burst_addr[23]_write_addr_0[23]_mux_17_OUT>
+    Found 16-bit comparator greater for signal <n0024> created at line 161
+    Found 24-bit comparator greater for signal <write_cnt[23]_write_len_latch[23]_LessThan_36_o> created at line 192
+    WARNING:Xst:2404 -  FFs/Latches <write_len_d0<23:20>> (without init value) have a constant value of 0 in block <frame_fifo_write>.
+    WARNING:Xst:2404 -  FFs/Latches <write_len_d0<17:0>> (without init value) have a constant value of 0 in block <frame_fifo_write>.
+    WARNING:Xst:2404 -  FFs/Latches <write_len_d1<23:20>> (without init value) have a constant value of 0 in block <frame_fifo_write>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred 113 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   5 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <frame_fifo_write> synthesized.
+
+Synthesizing Unit <frame_fifo_read>.
+    Related source file is "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\frame_fifo_read.v".
+        MEM_DATA_BITS = 16
+        ADDR_BITS = 24
+        BUSRT_BITS = 10
+        FIFO_DEPTH = 512
+        BURST_SIZE = 256
+    Register <read_len_d0_dummy> equivalent to <read_len_d0> has been removed
+    Found 20-bit register for signal <read_len_d1>.
+    Found 24-bit register for signal <read_len_latch>.
+    Found 24-bit register for signal <rd_burst_addr>.
+    Found 24-bit register for signal <read_cnt>.
+    Found 2-bit register for signal <read_addr_index_d0>.
+    Found 2-bit register for signal <read_addr_index_d1>.
+    Found 4-bit register for signal <state>.
+    Found 10-bit register for signal <rd_burst_len>.
+    Found 1-bit register for signal <read_req_d1>.
+    Found 1-bit register for signal <read_req_d2>.
+    Found 1-bit register for signal <rd_burst_req>.
+    Found 1-bit register for signal <fifo_aclr>.
+    Found 1-bit register for signal <read_req_ack>.
+    Found 1-bit register for signal <read_req_d0>.
+    Found 1-bit register for signal <read_len_d0>.
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 6                                              |
+    | Transitions        | 13                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 9                                              |
+    | Clock              | mem_clk (rising_edge)                          |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 24-bit adder for signal <read_cnt[23]_GND_32_o_add_28_OUT> created at line 178.
+    Found 24-bit adder for signal <rd_burst_addr[23]_GND_32_o_add_29_OUT> created at line 180.
+    Found 4x24-bit Read Only RAM for signal <rd_burst_addr[23]_read_addr_0[23]_mux_17_OUT>
+    Found 16-bit comparator greater for signal <wr_data_count[15]_GND_32_o_LessThan_23_o> created at line 161
+    Found 24-bit comparator greater for signal <read_cnt[23]_read_len_latch[23]_LessThan_35_o> created at line 192
+    WARNING:Xst:2404 -  FFs/Latches <read_len_d0<23:20>> (without init value) have a constant value of 0 in block <frame_fifo_read>.
+    WARNING:Xst:2404 -  FFs/Latches <read_len_d0<17:0>> (without init value) have a constant value of 0 in block <frame_fifo_read>.
+    WARNING:Xst:2404 -  FFs/Latches <read_len_d1<23:20>> (without init value) have a constant value of 0 in block <frame_fifo_read>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred 113 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   5 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <frame_fifo_read> synthesized.
+
+Synthesizing Unit <sdram_core>.
+    Related source file is "C:\Users\12963\Desktop\FPGA\FPGA_DS\src\sdram\sdram_core_v2.v".
+        T_RP = 4
+        T_RC = 6
+        T_MRD = 6
+        T_RCD = 2
+        T_WR = 3
+        CASn = 3
+        SDR_BA_WIDTH = 2
+        SDR_ROW_WIDTH = 13
+        SDR_COL_WIDTH = 9
+        SDR_DQ_WIDTH = 16
+        SDR_DQM_WIDTH = 2
+        APP_ADDR_WIDTH = 24
+        APP_BURST_WIDTH = 10
+    Found 13-bit register for signal <sdram_addr_r>.
+    Found 15-bit register for signal <cnt_200us>.
+    Found 11-bit register for signal <cnt_7p5us>.
+    Found 5-bit register for signal <state>.
+    Found 10-bit register for signal <cnt_clk_r>.
+    Found 16-bit register for signal <sdr_dq_out>.
+    Found 16-bit register for signal <sdr_dq_in>.
+    Found 1-bit register for signal <wr_burst_data_req_d1>.
+    Found 1-bit register for signal <rd_burst_data_valid_d0>.
+    Found 1-bit register for signal <rd_burst_data_valid_d1>.
+    Found 1-bit register for signal <sdram_ref_req>.
+    Found 1-bit register for signal <sdr_dq_oe>.
+    Found 1-bit register for signal <wr_burst_data_req_d0>.
+    Found 1-bit register for signal <sdram_cas_n>.
+    Found 1-bit register for signal <sdram_ras_n>.
+    Found 1-bit register for signal <sdram_we_n>.
+    Found 2-bit register for signal <sdram_ba_r>.
+    Found 1-bit register for signal <read_flag>.
+    Found finite state machine <FSM_2> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 23                                             |
+    | Transitions        | 39                                             |
+    | Inputs             | 12                                             |
+    | Outputs            | 14                                             |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00000                                          |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 11-bit subtractor for signal <GND_33_o_GND_33_o_sub_6_OUT> created at line 101.
+    Found 11-bit subtractor for signal <GND_33_o_GND_33_o_sub_12_OUT> created at line 104.
+    Found 10-bit subtractor for signal <wr_burst_len[9]_GND_33_o_sub_60_OUT> created at line 271.
+    Found 11-bit adder for signal <_n0241> created at line 102.
+    Found 15-bit adder for signal <cnt_200us[14]_GND_33_o_add_24_OUT> created at line 144.
+    Found 11-bit adder for signal <cnt_7p5us[10]_GND_33_o_add_30_OUT> created at line 157.
+    Found 10-bit adder for signal <rd_burst_len[9]_GND_33_o_add_63_OUT> created at line 273.
+    Found 10-bit adder for signal <cnt_clk_r[9]_GND_33_o_add_66_OUT> created at line 283.
+    Found 1-bit tristate buffer for signal <sdram_dq<15>> created at line 131
+    Found 1-bit tristate buffer for signal <sdram_dq<14>> created at line 131
+    Found 1-bit tristate buffer for signal <sdram_dq<13>> created at line 131
+    Found 1-bit tristate buffer for signal <sdram_dq<12>> created at line 131
+    Found 1-bit tristate buffer for signal <sdram_dq<11>> created at line 131
+    Found 1-bit tristate buffer for signal <sdram_dq<10>> created at line 131
+    Found 1-bit tristate buffer for signal <sdram_dq<9>> created at line 131
+    Found 1-bit tristate buffer for signal <sdram_dq<8>> created at line 131
+    Found 1-bit tristate buffer for signal <sdram_dq<7>> created at line 131
+    Found 1-bit tristate buffer for signal <sdram_dq<6>> created at line 131
+    Found 1-bit tristate buffer for signal <sdram_dq<5>> created at line 131
+    Found 1-bit tristate buffer for signal <sdram_dq<4>> created at line 131
+    Found 1-bit tristate buffer for signal <sdram_dq<3>> created at line 131
+    Found 1-bit tristate buffer for signal <sdram_dq<2>> created at line 131
+    Found 1-bit tristate buffer for signal <sdram_dq<1>> created at line 131
+    Found 1-bit tristate buffer for signal <sdram_dq<0>> created at line 131
+    Found 32-bit comparator equal for signal <end_rdburst> created at line 101
+    Found 32-bit comparator equal for signal <end_twrite> created at line 104
+    Found 15-bit comparator greater for signal <cnt_200us[14]_PWR_22_o_LessThan_24_o> created at line 143
+    Found 11-bit comparator greater for signal <cnt_7p5us[10]_GND_33_o_LessThan_30_o> created at line 156
+    Found 10-bit comparator greater for signal <cnt_clk_r[9]_wr_burst_len[9]_LessThan_61_o> created at line 271
+    Found 10-bit comparator lessequal for signal <n0092> created at line 273
+    Found 10-bit comparator greater for signal <cnt_clk_r[9]_rd_burst_len[9]_LessThan_65_o> created at line 273
+    Found 11-bit comparator equal for signal <end_tread> created at line 102
+    Summary:
+	inferred   8 Adder/Subtractor(s).
+	inferred  93 D-type flip-flop(s).
+	inferred   8 Comparator(s).
+	inferred  41 Multiplexer(s).
+	inferred  16 Tristate(s).
+	inferred   1 Finite State Machine(s).
+Unit <sdram_core> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 4x24-bit single-port Read Only RAM                    : 2
+# Adders/Subtractors                                   : 22
+ 10-bit adder                                          : 2
+ 10-bit subtractor                                     : 1
+ 11-bit adder                                          : 2
+ 11-bit subtractor                                     : 2
+ 12-bit adder                                          : 2
+ 12-bit subtractor                                     : 1
+ 15-bit adder                                          : 1
+ 2-bit adder                                           : 1
+ 24-bit adder                                          : 4
+ 28-bit adder                                          : 1
+ 4-bit adder                                           : 1
+ 5-bit subtractor                                      : 2
+ 6-bit subtractor                                      : 1
+ 9-bit adder                                           : 1
+# Registers                                            : 89
+ 1-bit register                                        : 48
+ 10-bit register                                       : 3
+ 11-bit register                                       : 1
+ 12-bit register                                       : 3
+ 13-bit register                                       : 1
+ 15-bit register                                       : 1
+ 16-bit register                                       : 3
+ 2-bit register                                        : 9
+ 20-bit register                                       : 2
+ 24-bit register                                       : 6
+ 28-bit register                                       : 1
+ 4-bit register                                        : 1
+ 5-bit register                                        : 2
+ 6-bit register                                        : 1
+ 8-bit register                                        : 6
+ 9-bit register                                        : 1
+# Comparators                                          : 19
+ 10-bit comparator greater                             : 2
+ 10-bit comparator lessequal                           : 1
+ 11-bit comparator equal                               : 1
+ 11-bit comparator greater                             : 1
+ 12-bit comparator greater                             : 1
+ 15-bit comparator greater                             : 1
+ 16-bit comparator greater                             : 2
+ 24-bit comparator greater                             : 2
+ 28-bit comparator greater                             : 1
+ 32-bit comparator equal                               : 2
+ 4-bit comparator greater                              : 1
+ 8-bit comparator greater                              : 4
+# Multiplexers                                         : 91
+ 1-bit 2-to-1 multiplexer                              : 39
+ 10-bit 2-to-1 multiplexer                             : 1
+ 11-bit 2-to-1 multiplexer                             : 1
+ 12-bit 2-to-1 multiplexer                             : 2
+ 13-bit 2-to-1 multiplexer                             : 7
+ 16-bit 2-to-1 multiplexer                             : 1
+ 2-bit 2-to-1 multiplexer                              : 6
+ 24-bit 2-to-1 multiplexer                             : 5
+ 28-bit 2-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 1
+ 5-bit 2-to-1 multiplexer                              : 6
+ 6-bit 2-to-1 multiplexer                              : 2
+ 8-bit 2-to-1 multiplexer                              : 18
+ 9-bit 2-to-1 multiplexer                              : 1
+# Tristates                                            : 17
+ 1-bit tristate buffer                                 : 17
+# FSMs                                                 : 3
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <ipcore_dir/afifo_16_512.ngc>.
+Loading core <afifo_16_512> for timing and area information for instance <read_buf>.
+Loading core <afifo_16_512> for timing and area information for instance <write_buf>.
+INFO:Xst:2261 - The FF/Latch <read_len_d1_0> in Unit <frame_fifo_read_m0> is equivalent to the following 17 FFs/Latches, which will be removed : <read_len_d1_1> <read_len_d1_2> <read_len_d1_3> <read_len_d1_4> <read_len_d1_5> <read_len_d1_6> <read_len_d1_7> <read_len_d1_8> <read_len_d1_9> <read_len_d1_10> <read_len_d1_11> <read_len_d1_12> <read_len_d1_13> <read_len_d1_14> <read_len_d1_15> <read_len_d1_16> <read_len_d1_17> 
+INFO:Xst:2261 - The FF/Latch <read_len_latch_20> in Unit <frame_fifo_read_m0> is equivalent to the following 3 FFs/Latches, which will be removed : <read_len_latch_21> <read_len_latch_22> <read_len_latch_23> 
+INFO:Xst:2261 - The FF/Latch <rd_burst_len_0> in Unit <frame_fifo_read_m0> is equivalent to the following 8 FFs/Latches, which will be removed : <rd_burst_len_1> <rd_burst_len_2> <rd_burst_len_3> <rd_burst_len_4> <rd_burst_len_5> <rd_burst_len_6> <rd_burst_len_7> <rd_burst_len_9> 
+INFO:Xst:2261 - The FF/Latch <read_len_d1_18> in Unit <frame_fifo_read_m0> is equivalent to the following FF/Latch, which will be removed : <read_len_d1_19> 
+INFO:Xst:2261 - The FF/Latch <write_len_d1_0> in Unit <frame_fifo_write_m0> is equivalent to the following 17 FFs/Latches, which will be removed : <write_len_d1_1> <write_len_d1_2> <write_len_d1_3> <write_len_d1_4> <write_len_d1_5> <write_len_d1_6> <write_len_d1_7> <write_len_d1_8> <write_len_d1_9> <write_len_d1_10> <write_len_d1_11> <write_len_d1_12> <write_len_d1_13> <write_len_d1_14> <write_len_d1_15> <write_len_d1_16> <write_len_d1_17> 
+INFO:Xst:2261 - The FF/Latch <write_len_latch_20> in Unit <frame_fifo_write_m0> is equivalent to the following 3 FFs/Latches, which will be removed : <write_len_latch_21> <write_len_latch_22> <write_len_latch_23> 
+INFO:Xst:2261 - The FF/Latch <wr_burst_len_0> in Unit <frame_fifo_write_m0> is equivalent to the following 8 FFs/Latches, which will be removed : <wr_burst_len_1> <wr_burst_len_2> <wr_burst_len_3> <wr_burst_len_4> <wr_burst_len_5> <wr_burst_len_6> <wr_burst_len_7> <wr_burst_len_9> 
+INFO:Xst:2261 - The FF/Latch <write_len_d1_18> in Unit <frame_fifo_write_m0> is equivalent to the following FF/Latch, which will be removed : <write_len_d1_19> 
+INFO:Xst:2261 - The FF/Latch <read_len_latch_0> in Unit <frame_fifo_read_m0> is equivalent to the following 17 FFs/Latches, which will be removed : <read_len_latch_1> <read_len_latch_2> <read_len_latch_3> <read_len_latch_4> <read_len_latch_5> <read_len_latch_6> <read_len_latch_7> <read_len_latch_8> <read_len_latch_9> <read_len_latch_10> <read_len_latch_11> <read_len_latch_12> <read_len_latch_13> <read_len_latch_14> <read_len_latch_15> <read_len_latch_16> <read_len_latch_17> 
+INFO:Xst:2261 - The FF/Latch <read_len_latch_18> in Unit <frame_fifo_read_m0> is equivalent to the following FF/Latch, which will be removed : <read_len_latch_19> 
+INFO:Xst:2261 - The FF/Latch <write_len_latch_18> in Unit <frame_fifo_write_m0> is equivalent to the following FF/Latch, which will be removed : <write_len_latch_19> 
+INFO:Xst:2261 - The FF/Latch <write_len_latch_0> in Unit <frame_fifo_write_m0> is equivalent to the following 17 FFs/Latches, which will be removed : <write_len_latch_1> <write_len_latch_2> <write_len_latch_3> <write_len_latch_4> <write_len_latch_5> <write_len_latch_6> <write_len_latch_7> <write_len_latch_8> <write_len_latch_9> <write_len_latch_10> <write_len_latch_11> <write_len_latch_12> <write_len_latch_13> <write_len_latch_14> <write_len_latch_15> <write_len_latch_16> <write_len_latch_17> 
+WARNING:Xst:1710 - FF/Latch <rd_burst_len_0> (without init value) has a constant value of 0 in block <frame_fifo_read_m0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <read_len_d1_0> (without init value) has a constant value of 0 in block <frame_fifo_read_m0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <read_len_latch_20> (without init value) has a constant value of 0 in block <frame_fifo_read_m0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <wr_burst_len_0> (without init value) has a constant value of 0 in block <frame_fifo_write_m0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_len_d1_0> (without init value) has a constant value of 0 in block <frame_fifo_write_m0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_len_latch_20> (without init value) has a constant value of 0 in block <frame_fifo_write_m0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_latch_0> (without init value) has a constant value of 0 in block <frame_fifo_read_m0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_latch_0> (without init value) has a constant value of 0 in block <frame_fifo_write_m0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2404 -  FFs/Latches <read_len_latch<23:20>> (without init value) have a constant value of 0 in block <frame_fifo_read>.
+WARNING:Xst:2404 -  FFs/Latches <rd_burst_len<9:9>> (without init value) have a constant value of 0 in block <frame_fifo_read>.
+WARNING:Xst:2404 -  FFs/Latches <write_len_latch<23:20>> (without init value) have a constant value of 0 in block <frame_fifo_write>.
+WARNING:Xst:2404 -  FFs/Latches <wr_burst_len<9:9>> (without init value) have a constant value of 0 in block <frame_fifo_write>.
+
+Synthesizing (advanced) Unit <CMOS_Capture_RAW_Gray>.
+The following registers are absorbed into counter <delay_cnt>: 1 register on signal <delay_cnt>.
+The following registers are absorbed into counter <cmos_fps_cnt>: 1 register on signal <cmos_fps_cnt>.
+The following registers are absorbed into counter <cmos_fps_cnt2>: 1 register on signal <cmos_fps_cnt2>.
+Unit <CMOS_Capture_RAW_Gray> synthesized (advanced).
+
+Synthesizing (advanced) Unit <cmos_write_req_gen>.
+The following registers are absorbed into counter <write_addr_index>: 1 register on signal <write_addr_index>.
+Unit <cmos_write_req_gen> synthesized (advanced).
+
+Synthesizing (advanced) Unit <color_bar>.
+The following registers are absorbed into counter <h_cnt>: 1 register on signal <h_cnt>.
+The following registers are absorbed into counter <v_cnt>: 1 register on signal <v_cnt>.
+Unit <color_bar> synthesized (advanced).
+
+Synthesizing (advanced) Unit <frame_fifo_read>.
+INFO:Xst:3217 - HDL ADVISOR - Register <rd_burst_addr> currently described with an asynchronous reset, could be combined with distributed RAM <Mram_rd_burst_addr[23]_read_addr_0[23]_mux_17_OUT> for implementation on block RAM resources if you made this reset synchronous instead.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 24-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <read_addr_index_d1> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <frame_fifo_read> synthesized (advanced).
+
+Synthesizing (advanced) Unit <frame_fifo_write>.
+INFO:Xst:3217 - HDL ADVISOR - Register <wr_burst_addr> currently described with an asynchronous reset, could be combined with distributed RAM <Mram_wr_burst_addr[23]_write_addr_0[23]_mux_17_OUT> for implementation on block RAM resources if you made this reset synchronous instead.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 24-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <write_addr_index_d1> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <frame_fifo_write> synthesized (advanced).
+
+Synthesizing (advanced) Unit <sdram_core>.
+The following registers are absorbed into counter <cnt_7p5us>: 1 register on signal <cnt_7p5us>.
+The following registers are absorbed into counter <cnt_clk_r>: 1 register on signal <cnt_clk_r>.
+The following registers are absorbed into counter <cnt_200us>: 1 register on signal <cnt_200us>.
+Unit <sdram_core> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 4x24-bit single-port distributed Read Only RAM        : 2
+# Adders/Subtractors                                   : 13
+ 10-bit adder                                          : 1
+ 10-bit subtractor                                     : 1
+ 11-bit adder                                          : 1
+ 11-bit subtractor                                     : 2
+ 12-bit subtractor                                     : 1
+ 24-bit adder                                          : 4
+ 5-bit subtractor                                      : 2
+ 6-bit subtractor                                      : 1
+# Counters                                             : 9
+ 10-bit up counter                                     : 1
+ 11-bit up counter                                     : 1
+ 12-bit up counter                                     : 2
+ 15-bit up counter                                     : 1
+ 2-bit up counter                                      : 1
+ 28-bit up counter                                     : 1
+ 4-bit up counter                                      : 1
+ 9-bit up counter                                      : 1
+# Registers                                            : 395
+ Flip-Flops                                            : 395
+# Comparators                                          : 19
+ 10-bit comparator greater                             : 2
+ 10-bit comparator lessequal                           : 1
+ 11-bit comparator equal                               : 1
+ 11-bit comparator greater                             : 1
+ 12-bit comparator greater                             : 1
+ 15-bit comparator greater                             : 1
+ 16-bit comparator greater                             : 2
+ 24-bit comparator greater                             : 2
+ 28-bit comparator greater                             : 1
+ 32-bit comparator equal                               : 2
+ 4-bit comparator greater                              : 1
+ 8-bit comparator greater                              : 4
+# Multiplexers                                         : 84
+ 1-bit 2-to-1 multiplexer                              : 39
+ 13-bit 2-to-1 multiplexer                             : 7
+ 16-bit 2-to-1 multiplexer                             : 1
+ 2-bit 2-to-1 multiplexer                              : 6
+ 24-bit 2-to-1 multiplexer                             : 5
+ 5-bit 2-to-1 multiplexer                              : 6
+ 6-bit 2-to-1 multiplexer                              : 2
+ 8-bit 2-to-1 multiplexer                              : 18
+# FSMs                                                 : 3
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <read_len_d1_17> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_d1_16> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_d1_15> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_d1_14> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_d1_13> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_d1_12> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_d1_11> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_d1_10> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_d1_9> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_d1_8> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_d1_7> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_d1_6> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_d1_5> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rd_burst_len_0> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rd_burst_len_1> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rd_burst_len_2> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rd_burst_len_3> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rd_burst_len_4> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rd_burst_len_5> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rd_burst_len_6> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rd_burst_len_7> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_d1_0> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_d1_1> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_d1_2> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_d1_3> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_d1_4> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_latch_17> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_latch_16> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_latch_15> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_latch_14> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_latch_13> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_latch_12> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_latch_11> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_latch_10> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_latch_9> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_latch_8> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_latch_7> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_latch_6> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_latch_5> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_latch_4> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_latch_3> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_latch_2> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_latch_1> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_latch_0> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_len_d1_17> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_d1_16> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_d1_15> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_d1_14> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_d1_13> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_d1_12> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_d1_11> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_d1_10> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_d1_9> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_d1_8> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_d1_7> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_d1_6> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_d1_5> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_burst_len_0> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_burst_len_1> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_burst_len_2> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_burst_len_3> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_burst_len_4> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_burst_len_5> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_burst_len_6> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_burst_len_7> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_d1_0> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_d1_1> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_d1_2> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_d1_3> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_d1_4> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_latch_17> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_latch_16> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_latch_15> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_latch_14> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_latch_13> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_latch_12> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_latch_11> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_latch_10> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_latch_9> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_latch_8> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_latch_7> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_latch_6> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_latch_5> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_latch_4> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_latch_3> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_latch_2> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_latch_1> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_len_latch_0> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <read_len_d1_18> in Unit <frame_fifo_read> is equivalent to the following FF/Latch, which will be removed : <read_len_d1_19> 
+INFO:Xst:2261 - The FF/Latch <read_len_latch_18> in Unit <frame_fifo_read> is equivalent to the following FF/Latch, which will be removed : <read_len_latch_19> 
+INFO:Xst:2261 - The FF/Latch <write_len_d1_18> in Unit <frame_fifo_write> is equivalent to the following FF/Latch, which will be removed : <write_len_d1_19> 
+INFO:Xst:2261 - The FF/Latch <write_len_latch_18> in Unit <frame_fifo_write> is equivalent to the following FF/Latch, which will be removed : <write_len_latch_19> 
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <frame_read_write_m0/frame_fifo_read_m0/FSM_1> on signal <state[1:3]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 000
+ 0001  | 001
+ 0010  | 010
+ 0011  | 011
+ 0100  | 100
+ 0101  | 101
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <frame_read_write_m0/frame_fifo_write_m0/FSM_0> on signal <state[1:3]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 000
+ 0001  | 001
+ 0010  | 010
+ 0011  | 011
+ 0100  | 100
+ 0101  | 101
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <sdram_core_m0/FSM_2> on signal <state[1:5]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00000 | 00000
+ 00001 | 00001
+ 00010 | 00010
+ 00011 | 00011
+ 00100 | 00100
+ 00101 | 00101
+ 00110 | 00110
+ 00111 | 00111
+ 01000 | 01000
+ 01001 | 01001
+ 01010 | 01010
+ 01011 | 01011
+ 10101 | 10101
+ 01100 | 01100
+ 10000 | 10000
+ 01101 | 01101
+ 01110 | 01110
+ 01111 | 01111
+ 10011 | 10011
+ 10001 | 10001
+ 10010 | 10010
+ 10100 | 10100
+ 10110 | 10110
+-------------------
+WARNING:Xst:1710 - FF/Latch <rd_burst_addr_0> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rd_burst_addr_1> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rd_burst_addr_2> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rd_burst_addr_3> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rd_burst_addr_4> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rd_burst_addr_5> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rd_burst_addr_6> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rd_burst_addr_7> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <read_cnt_0> of sequential type is unconnected in block <frame_fifo_read>.
+WARNING:Xst:2677 - Node <read_cnt_1> of sequential type is unconnected in block <frame_fifo_read>.
+WARNING:Xst:2677 - Node <read_cnt_2> of sequential type is unconnected in block <frame_fifo_read>.
+WARNING:Xst:2677 - Node <read_cnt_3> of sequential type is unconnected in block <frame_fifo_read>.
+WARNING:Xst:2677 - Node <read_cnt_4> of sequential type is unconnected in block <frame_fifo_read>.
+WARNING:Xst:2677 - Node <read_cnt_5> of sequential type is unconnected in block <frame_fifo_read>.
+WARNING:Xst:2677 - Node <read_cnt_6> of sequential type is unconnected in block <frame_fifo_read>.
+WARNING:Xst:2677 - Node <read_cnt_7> of sequential type is unconnected in block <frame_fifo_read>.
+WARNING:Xst:1710 - FF/Latch <wr_burst_addr_0> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_burst_addr_1> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_burst_addr_2> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_burst_addr_3> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_burst_addr_4> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_burst_addr_5> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_burst_addr_6> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_burst_addr_7> (without init value) has a constant value of 0 in block <frame_fifo_write>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <write_cnt_0> of sequential type is unconnected in block <frame_fifo_write>.
+WARNING:Xst:2677 - Node <write_cnt_1> of sequential type is unconnected in block <frame_fifo_write>.
+WARNING:Xst:2677 - Node <write_cnt_2> of sequential type is unconnected in block <frame_fifo_write>.
+WARNING:Xst:2677 - Node <write_cnt_3> of sequential type is unconnected in block <frame_fifo_write>.
+WARNING:Xst:2677 - Node <write_cnt_4> of sequential type is unconnected in block <frame_fifo_write>.
+WARNING:Xst:2677 - Node <write_cnt_5> of sequential type is unconnected in block <frame_fifo_write>.
+WARNING:Xst:2677 - Node <write_cnt_6> of sequential type is unconnected in block <frame_fifo_write>.
+WARNING:Xst:2677 - Node <write_cnt_7> of sequential type is unconnected in block <frame_fifo_write>.
+INFO:Xst:1901 - Instance sys_pll_m0/pll_base_inst in unit sys_pll_m0/pll_base_inst of type PLL_BASE has been replaced by PLL_ADV
+INFO:Xst:2261 - The FF/Latch <rgb_g_reg_0> in Unit <color_bar> is equivalent to the following 7 FFs/Latches, which will be removed : <rgb_g_reg_1> <rgb_g_reg_2> <rgb_g_reg_3> <rgb_g_reg_4> <rgb_g_reg_5> <rgb_g_reg_6> <rgb_g_reg_7> 
+INFO:Xst:2261 - The FF/Latch <rgb_r_reg_0> in Unit <color_bar> is equivalent to the following 7 FFs/Latches, which will be removed : <rgb_r_reg_1> <rgb_r_reg_2> <rgb_r_reg_3> <rgb_r_reg_4> <rgb_r_reg_5> <rgb_r_reg_6> <rgb_r_reg_7> 
+INFO:Xst:2261 - The FF/Latch <rgb_b_reg_0> in Unit <color_bar> is equivalent to the following 7 FFs/Latches, which will be removed : <rgb_b_reg_1> <rgb_b_reg_2> <rgb_b_reg_3> <rgb_b_reg_4> <rgb_b_reg_5> <rgb_b_reg_6> <rgb_b_reg_7> 
+
+Optimizing unit <top> ...
+
+Optimizing unit <CMOS_Capture_RAW_Gray> ...
+
+Optimizing unit <cmos_write_req_gen> ...
+
+Optimizing unit <frame_fifo_read> ...
+
+Optimizing unit <frame_fifo_write> ...
+
+Optimizing unit <rgb_to_M> ...
+
+Optimizing unit <video_timing_data> ...
+
+Optimizing unit <color_bar> ...
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/cmos_fps_cnt2_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/cmos_fps_cnt2_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/cmos_fps_cnt2_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/cmos_fps_cnt2_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/cmos_fps_cnt2_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/cmos_fps_cnt2_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/cmos_fps_cnt2_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/cmos_fps_cnt2_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/cmos_fps_cnt2_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/delay_cnt_27> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/delay_cnt_26> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/delay_cnt_25> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/delay_cnt_24> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/delay_cnt_23> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/delay_cnt_22> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/delay_cnt_21> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/delay_cnt_20> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/delay_cnt_19> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/delay_cnt_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/delay_cnt_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/delay_cnt_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/delay_cnt_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/delay_cnt_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/delay_cnt_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/delay_cnt_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/delay_cnt_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/delay_cnt_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/delay_cnt_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/delay_cnt_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/delay_cnt_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/delay_cnt_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/delay_cnt_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/delay_cnt_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/delay_cnt_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/delay_cnt_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/delay_cnt_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/delay_cnt_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/cmos_fps_rate_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/cmos_fps_rate_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/cmos_fps_rate_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/cmos_fps_rate_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/cmos_fps_rate_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/cmos_fps_rate_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/cmos_fps_rate_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <u_CMOS_Capture_RAW_Gray/cmos_fps_rate_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <video_timing_data_m0/video_de_d1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <video_timing_data_m0/color_bar_m0/rgb_b_reg_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <video_timing_data_m0/color_bar_m0/rgb_r_reg_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <video_timing_data_m0/color_bar_m0/rgb_g_reg_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <video_timing_data_m0/color_bar_m0/active_x_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <video_timing_data_m0/color_bar_m0/active_x_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <video_timing_data_m0/color_bar_m0/active_x_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <video_timing_data_m0/color_bar_m0/active_x_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <video_timing_data_m0/color_bar_m0/active_x_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <video_timing_data_m0/color_bar_m0/active_x_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <video_timing_data_m0/color_bar_m0/active_x_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <video_timing_data_m0/color_bar_m0/active_x_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <video_timing_data_m0/color_bar_m0/active_x_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <video_timing_data_m0/color_bar_m0/active_x_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <video_timing_data_m0/color_bar_m0/active_x_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <video_timing_data_m0/color_bar_m0/active_x_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:1710 - FF/Latch <sdram_core_m0/cnt_7p5us_10> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <frame_read_write_m0/frame_fifo_read_m0/read_cnt_23> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <frame_read_write_m0/frame_fifo_read_m0/read_cnt_22> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <frame_read_write_m0/frame_fifo_read_m0/read_cnt_21> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <frame_read_write_m0/frame_fifo_read_m0/read_cnt_20> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <frame_read_write_m0/frame_fifo_write_m0/write_cnt_23> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <frame_read_write_m0/frame_fifo_write_m0/write_cnt_22> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <frame_read_write_m0/frame_fifo_write_m0/write_cnt_21> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <frame_read_write_m0/frame_fifo_write_m0/write_cnt_20> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <frame_read_write_m0/frame_fifo_read_m0/fifo_aclr> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <frame_read_write_m0/frame_fifo_read_m0/read_req_ack> 
+INFO:Xst:2261 - The FF/Latch <frame_read_write_m0/frame_fifo_write_m0/write_req_ack> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <frame_read_write_m0/frame_fifo_write_m0/fifo_aclr> 
+INFO:Xst:2261 - The FF/Latch <frame_read_write_m0/frame_fifo_read_m0/read_len_d0> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <frame_read_write_m0/frame_fifo_write_m0/write_len_d0> 
+INFO:Xst:2261 - The FF/Latch <frame_read_write_m0/frame_fifo_read_m0/read_len_d1_18> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <frame_read_write_m0/frame_fifo_write_m0/write_len_d1_18> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 13.
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> in Unit <frame_read_write_m0/read_buf> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <frame_read_write_m0/read_buf> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <frame_read_write_m0/read_buf> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <frame_read_write_m0/read_buf> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> in Unit <frame_read_write_m0/write_buf> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <frame_read_write_m0/write_buf> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <frame_read_write_m0/write_buf> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <frame_read_write_m0/write_buf> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> in Unit <frame_read_write_m0/read_buf> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <frame_read_write_m0/read_buf> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <frame_read_write_m0/read_buf> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <frame_read_write_m0/read_buf> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> in Unit <frame_read_write_m0/write_buf> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <frame_read_write_m0/write_buf> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <frame_read_write_m0/write_buf> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <frame_read_write_m0/write_buf> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+FlipFlop sdram_core_m0/cnt_clk_r_0 has been replicated 3 time(s)
+FlipFlop sdram_core_m0/cnt_clk_r_1 has been replicated 2 time(s)
+FlipFlop sdram_core_m0/cnt_clk_r_2 has been replicated 2 time(s)
+FlipFlop sdram_core_m0/state_FSM_FFd1 has been replicated 1 time(s)
+FlipFlop sdram_core_m0/state_FSM_FFd2 has been replicated 1 time(s)
+FlipFlop sdram_core_m0/state_FSM_FFd3 has been replicated 1 time(s)
+FlipFlop sdram_core_m0/state_FSM_FFd5 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 301
+ Flip-Flops                                            : 301
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 1057
+#      GND                         : 5
+#      INV                         : 20
+#      LUT1                        : 89
+#      LUT2                        : 191
+#      LUT3                        : 123
+#      LUT4                        : 102
+#      LUT5                        : 54
+#      LUT6                        : 124
+#      MUXCY                       : 192
+#      MUXF7                       : 3
+#      VCC                         : 3
+#      XORCY                       : 151
+# FlipFlops/Latches                : 601
+#      FD                          : 8
+#      FDC                         : 355
+#      FDCE                        : 185
+#      FDE                         : 2
+#      FDP                         : 46
+#      FDPE                        : 4
+#      FDSE                        : 1
+# RAMS                             : 2
+#      RAMB8BWER                   : 2
+# Clock Buffers                    : 7
+#      BUFG                        : 6
+#      BUFGP                       : 1
+# IO Buffers                       : 73
+#      IBUF                        : 11
+#      IBUFG                       : 1
+#      IOBUF                       : 16
+#      OBUF                        : 44
+#      OBUFT                       : 1
+# DCMs                             : 1
+#      DCM_SP                      : 1
+# Others                           : 1
+#      PLL_ADV                     : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9ftg256-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             601  out of  11440     5%  
+ Number of Slice LUTs:                  703  out of   5720    12%  
+    Number used as Logic:               703  out of   5720    12%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    919
+   Number with an unused Flip Flop:     318  out of    919    34%  
+   Number with an unused LUT:           216  out of    919    23%  
+   Number of fully used LUT-FF pairs:   385  out of    919    41%  
+   Number of unique control sets:        40
+
+IO Utilization: 
+ Number of IOs:                          88
+ Number of bonded IOBs:                  74  out of    186    39%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                1  out of     32     3%  
+    Number using Block RAM only:          1
+ Number of BUFG/BUFGCTRLs:                7  out of     16    43%  
+ Number of PLL_ADVs:                      1  out of      2    50%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+sys_pll_m0/pll_base_inst/CLKOUT2   | BUFG                   | 346   |
+cmos_pclk                          | BUFGP                  | 115   |
+sys_pll_m0/pll_base_inst/CLKOUT0   | BUFG                   | 16    |
+clk                                | DCM_SP:CLKFX           | 128   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 6.870ns (Maximum Frequency: 145.551MHz)
+   Minimum input arrival time before clock: 7.530ns
+   Maximum output required time after clock: 5.554ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'sys_pll_m0/pll_base_inst/CLKOUT2'
+  Clock period: 6.870ns (frequency: 145.551MHz)
+  Total number of paths / destination ports: 12277 / 612
+-------------------------------------------------------------------------
+Delay:               6.870ns (Levels of Logic = 5)
+  Source:            sdram_core_m0/cnt_clk_r_3 (FF)
+  Destination:       frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram (RAM)
+  Source Clock:      sys_pll_m0/pll_base_inst/CLKOUT2 rising
+  Destination Clock: sys_pll_m0/pll_base_inst/CLKOUT2 rising
+
+  Data Path: sdram_core_m0/cnt_clk_r_3 to frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             16   0.525   1.290  sdram_core_m0/cnt_clk_r_3 (sdram_core_m0/cnt_clk_r_3)
+     LUT6:I4->O            1   0.250   0.682  sdram_core_m0/rd_burst_data_valid1 (sdram_core_m0/rd_burst_data_valid)
+     LUT5:I4->O            2   0.254   0.726  sdram_core_m0/rd_burst_data_valid2 (sdram_core_m0/rd_burst_data_valid1)
+     LUT6:I5->O            3   0.254   0.874  sdram_core_m0/rd_burst_data_valid3 (rd_burst_data_valid)
+     begin scope: 'frame_read_write_m0/read_buf:wr_en'
+     LUT2:I0->O           27   0.250   1.435  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/ram_wr_en_i1 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/ram_wr_en)
+     begin scope: 'frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr:WEA<0>'
+     RAMB8BWER:WEAWEL1         0.330          ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+    ----------------------------------------
+    Total                      6.870ns (1.863ns logic, 5.007ns route)
+                                       (27.1% logic, 72.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'cmos_pclk'
+  Clock period: 4.993ns (frequency: 200.263MHz)
+  Total number of paths / destination ports: 581 / 208
+-------------------------------------------------------------------------
+Delay:               4.993ns (Levels of Logic = 3)
+  Source:            u_CMOS_Capture_RAW_Gray/frame_sync_flag (FF)
+  Destination:       frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram (RAM)
+  Source Clock:      cmos_pclk rising
+  Destination Clock: cmos_pclk rising
+
+  Data Path: u_CMOS_Capture_RAW_Gray/frame_sync_flag to frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             19   0.525   1.369  u_CMOS_Capture_RAW_Gray/frame_sync_flag (u_CMOS_Capture_RAW_Gray/frame_sync_flag)
+     LUT2:I0->O            2   0.250   0.834  u_CMOS_Capture_RAW_Gray/Mmux_cmos_frame_href11 (cmos_frame_href)
+     begin scope: 'frame_read_write_m0/write_buf:wr_en'
+     LUT2:I0->O           27   0.250   1.435  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/ram_wr_en_i1 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/ram_wr_en)
+     begin scope: 'frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr:WEA<0>'
+     RAMB8BWER:WEAWEL1         0.330          ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+    ----------------------------------------
+    Total                      4.993ns (1.355ns logic, 3.638ns route)
+                                       (27.1% logic, 72.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 6.770ns (frequency: 147.702MHz)
+  Total number of paths / destination ports: 1284 / 222
+-------------------------------------------------------------------------
+Delay:               5.208ns (Levels of Logic = 4)
+  Source:            video_timing_data_m0/color_bar_m0/h_cnt_4 (FF)
+  Destination:       video_timing_data_m0/color_bar_m0/v0_active (FF)
+  Source Clock:      clk rising 1.3X
+  Destination Clock: clk rising 1.3X
+
+  Data Path: video_timing_data_m0/color_bar_m0/h_cnt_4 to video_timing_data_m0/color_bar_m0/v0_active
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              8   0.525   1.399  video_timing_data_m0/color_bar_m0/h_cnt_4 (video_timing_data_m0/color_bar_m0/h_cnt_4)
+     LUT6:I0->O            2   0.254   0.726  video_timing_data_m0/color_bar_m0/_n0322_inv1_SW2 (N114)
+     LUT6:I5->O            1   0.254   0.682  video_timing_data_m0/color_bar_m0/_n0345_inv1_SW0 (N234)
+     LUT6:I5->O            1   0.254   0.790  video_timing_data_m0/color_bar_m0/_n0345_inv1 (video_timing_data_m0/color_bar_m0/_n0345_inv)
+     LUT3:I1->O            1   0.250   0.000  video_timing_data_m0/color_bar_m0/v0_active_rstpot1 (video_timing_data_m0/color_bar_m0/v0_active_rstpot)
+     FDC:D                     0.074          video_timing_data_m0/color_bar_m0/v0_active
+    ----------------------------------------
+    Total                      5.208ns (1.611ns logic, 3.597ns route)
+                                       (30.9% logic, 69.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'sys_pll_m0/pll_base_inst/CLKOUT2'
+  Total number of paths / destination ports: 211 / 211
+-------------------------------------------------------------------------
+Offset:              7.530ns (Levels of Logic = 4)
+  Source:            rst_n (PAD)
+  Destination:       sdram_core_m0/read_flag (FF)
+  Destination Clock: sys_pll_m0/pll_base_inst/CLKOUT2 rising
+
+  Data Path: rst_n to sdram_core_m0/read_flag
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.328   0.681  rst_n_IBUF (rst_n_IBUF)
+     INV:I->O            300   0.255   2.892  rst_n_INV_97_o1_INV_0 (rst_n_INV_97_o)
+     LUT6:I0->O            2   0.254   0.726  sdram_core_m0/_n0252<4>11 (sdram_core_m0/_n0252<4>1)
+     LUT2:I1->O            1   0.254   0.681  sdram_core_m0/_n0252<4>2 (sdram_core_m0/_n0252)
+     FDSE:S                    0.459          sdram_core_m0/read_flag
+    ----------------------------------------
+    Total                      7.530ns (2.550ns logic, 4.980ns route)
+                                       (33.9% logic, 66.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'cmos_pclk'
+  Total number of paths / destination ports: 45 / 45
+-------------------------------------------------------------------------
+Offset:              5.159ns (Levels of Logic = 2)
+  Source:            rst_n (PAD)
+  Destination:       u_CMOS_Capture_RAW_Gray/cmos_fps_cnt_3 (FF)
+  Destination Clock: cmos_pclk rising
+
+  Data Path: rst_n to u_CMOS_Capture_RAW_Gray/cmos_fps_cnt_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.328   0.681  rst_n_IBUF (rst_n_IBUF)
+     INV:I->O            300   0.255   2.436  rst_n_INV_97_o1_INV_0 (rst_n_INV_97_o)
+     FDC:CLR                   0.459          cmos_write_req_gen_m0/cmos_vsync_d0
+    ----------------------------------------
+    Total                      5.159ns (2.042ns logic, 3.117ns route)
+                                       (39.6% logic, 60.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'sys_pll_m0/pll_base_inst/CLKOUT0'
+  Total number of paths / destination ports: 16 / 16
+-------------------------------------------------------------------------
+Offset:              5.159ns (Levels of Logic = 2)
+  Source:            rst_n (PAD)
+  Destination:       rgb_to_M_m0/data_r_4 (FF)
+  Destination Clock: sys_pll_m0/pll_base_inst/CLKOUT0 rising
+
+  Data Path: rst_n to rgb_to_M_m0/data_r_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.328   0.681  rst_n_IBUF (rst_n_IBUF)
+     INV:I->O            300   0.255   2.436  rst_n_INV_97_o1_INV_0 (rst_n_INV_97_o)
+     FDCE:CLR                  0.459          rgb_to_M_m0/data_g_0
+    ----------------------------------------
+    Total                      5.159ns (2.042ns logic, 3.117ns route)
+                                       (39.6% logic, 60.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 57 / 57
+-------------------------------------------------------------------------
+Offset:              5.982ns (Levels of Logic = 3)
+  Source:            rst_n (PAD)
+  Destination:       video_timing_data_m0/video_vs_d1 (FF)
+  Destination Clock: clk rising 1.3X
+
+  Data Path: rst_n to video_timing_data_m0/video_vs_d1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.328   0.681  rst_n_IBUF (rst_n_IBUF)
+     INV:I->O            300   0.255   2.436  rst_n_INV_97_o1_INV_0 (rst_n_INV_97_o)
+     INV:I->O              2   0.255   0.725  video_timing_data_m0/rst_inv1_INV_0 (video_timing_data_m0/rst_inv)
+     FDE:CE                    0.302          video_timing_data_m0/video_hs_d1
+    ----------------------------------------
+    Total                      5.982ns (2.140ns logic, 3.842ns route)
+                                       (35.8% logic, 64.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 18 / 18
+-------------------------------------------------------------------------
+Offset:              4.118ns (Levels of Logic = 1)
+  Source:            video_timing_data_m0/vout_data_r_4 (FF)
+  Destination:       vga_out_r<4> (PAD)
+  Source Clock:      clk rising 1.3X
+
+  Data Path: video_timing_data_m0/vout_data_r_4 to vga_out_r<4>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.525   0.681  video_timing_data_m0/vout_data_r_4 (video_timing_data_m0/vout_data_r_4)
+     OBUF:I->O                 2.912          vga_out_r_4_OBUF (vga_out_r<4>)
+    ----------------------------------------
+    Total                      4.118ns (3.437ns logic, 0.681ns route)
+                                       (83.5% logic, 16.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'sys_pll_m0/pll_base_inst/CLKOUT2'
+  Total number of paths / destination ports: 50 / 34
+-------------------------------------------------------------------------
+Offset:              5.554ns (Levels of Logic = 2)
+  Source:            sdram_core_m0/sdr_dq_oe (FF)
+  Destination:       sdram_dq<15> (PAD)
+  Source Clock:      sys_pll_m0/pll_base_inst/CLKOUT2 rising
+
+  Data Path: sdram_core_m0/sdr_dq_oe to sdram_dq<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.525   0.681  sdram_core_m0/sdr_dq_oe (sdram_core_m0/sdr_dq_oe)
+     INV:I->O             16   0.255   1.181  sdram_core_m0/sdr_dq_oe_inv1_INV_0 (sdram_core_m0/sdr_dq_oe_inv)
+     IOBUF:T->IO               2.912          sdram_dq_15_IOBUF (sdram_dq<15>)
+    ----------------------------------------
+    Total                      5.554ns (3.692ns logic, 1.862ns route)
+                                       (66.5% logic, 33.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+--------------------------------+---------+---------+---------+---------+
+                                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+--------------------------------+---------+---------+---------+---------+
+clk                             |    5.208|         |         |         |
+sys_pll_m0/pll_base_inst/CLKOUT2|    2.073|         |         |         |
+--------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock cmos_pclk
+--------------------------------+---------+---------+---------+---------+
+                                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+--------------------------------+---------+---------+---------+---------+
+cmos_pclk                       |    4.993|         |         |         |
+sys_pll_m0/pll_base_inst/CLKOUT0|    1.506|         |         |         |
+sys_pll_m0/pll_base_inst/CLKOUT2|    1.927|         |         |         |
+--------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock sys_pll_m0/pll_base_inst/CLKOUT0
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+cmos_pclk      |    5.165|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock sys_pll_m0/pll_base_inst/CLKOUT2
+--------------------------------+---------+---------+---------+---------+
+                                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+--------------------------------+---------+---------+---------+---------+
+clk                             |    1.324|         |         |         |
+cmos_pclk                       |    1.402|         |         |         |
+sys_pll_m0/pll_base_inst/CLKOUT2|    6.870|         |         |         |
+--------------------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 15.00 secs
+Total CPU time to Xst completion: 15.83 secs
+ 
+--> 
+
+Total memory usage is 4511244 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  232 (   0 filtered)
+Number of infos    :   60 (   0 filtered)
+
